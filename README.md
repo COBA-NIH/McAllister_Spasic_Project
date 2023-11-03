@@ -2,7 +2,7 @@
 
 ## <ins>Description of the image sets</ins>
 ## Dataset 1: CD8-SMA-tumors
-The dataset comprises High-contrast images [single-channel grayscale images; DAPI (DNA), CD8 (immune cells), SMA (fibroblasts)], Low-contrast images [single-channel grayscale images; DAPI (DNA), CD8 (immune cells), SMA (fibroblasts)], and Other images [single-channel grayscale images; DAPI (DNA), CD8 (immune cells), SMA (fibroblasts), along with a merged image].
+The dataset comprises High-contrast images [single-channel grayscale images; DAPI (DNA), FITC (CD8+ T-cells), Texas Red (SMA+ fibroblasts)], Low-contrast images [single-channel grayscale images; DAPI (DNA), CD8 (immune cells), SMA (fibroblasts)], and Other images [single-channel grayscale images; DAPI (DNA), CD8 (immune cells), SMA (fibroblasts), along with a merged image].
 
 ### The goals are to quantify:
 1) The number of CD8+ cells
@@ -14,12 +14,11 @@ The dataset comprises High-contrast images [single-channel grayscale images; DAP
 2) Accurate segmentation of fibrillar, non-circular objects
 
 ## Dataset 2: CD3-FOXP3-tumors
-The dataset comprises multichannel images (?multiple ROIs from same tumor). 
+The dataset comprises merged images (?multiple ROIs from same tumor), and single-channel grayscale images - DAPI (DNA), Cy5 (CD3+ T-cells), FITC (FOXP3+ T-cells).
 
 ### The goals are to quantify:
 1) The number of CD3+ cells
 2) The number of CD3/FOXP3 double-positive cells and % of CD3+ cells that are CD3/FOXP3 double-positive (FOXP3 single-positive cells should not be counted)
-3) 
 
 ### Additional points
  - Ability to use the pipeline regardless of fluorophore for each stain
