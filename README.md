@@ -2,7 +2,7 @@
 
 ## <ins>Description of the image sets</ins>
 ## Dataset 1: CD8-SMA-tumors
-The dataset comprises High-contrast images [single-channel grayscale images; DAPI (DNA), CD8 (immune cells), SMA (fibroblasts)], Low-contrast images [single-channel garyscale images; DAPI (DNA), CD8 (immune cells), SMA (fibroblasts)], and Other images [single-channel garyscale images; DAPI (DNA), CD8 (immune cells), SMA (fibroblasts), along with a merged image].
+The dataset comprises High-contrast images [single-channel grayscale images; DAPI (DNA), CD8 (immune cells), SMA (fibroblasts)], Low-contrast images [single-channel grayscale images; DAPI (DNA), CD8 (immune cells), SMA (fibroblasts)], and Other images [single-channel grayscale images; DAPI (DNA), CD8 (immune cells), SMA (fibroblasts), along with a merged image].
 
 ### The goals are to quantify:
 1) The number of CD8+ cells
