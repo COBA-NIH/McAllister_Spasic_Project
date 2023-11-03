@@ -10,7 +10,7 @@ The dataset comprises High-contrast images [single-channel grayscale images; DAP
 3) Distance association of CD8+ cells and SMA+ cells, i.e., measutrement of the average dustance of CD8+ cells from nearest SMA+ cell, and the number of CD8+ cells within a given distance (20, 50, and 100 um) of SMA+ cells
 
 ### Challenges
-1) Variations in the staining intenisty of SMA
+1) Variations in the staining intensity of SMA
 2) Accurate segmentation of fibrillar, non-circular objects
 
 ## Dataset 2: CD3-FOXP3-tumors
