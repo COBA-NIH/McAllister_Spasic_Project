@@ -1,8 +1,8 @@
 # Description of the pipeline modification
 
-#### The previously created 'IF Red Green Blue images' pipeline was modified to incorporate some of the additional functionalities available in CellProfiler 4.2.6. Ideally the pipeline should be run in CellProfiler 4.2.6, but should work on CellProfiler 4.2.5 as well. A description of the modules that current pipeline comprises is provided below along with the results of running the image analysis modules on example images chosen from the high-contrast, low-contrast, and other image sets.
+### The previously created 'IF Red Green Blue images' pipeline was modified to incorporate some of the additional functionalities available in CellProfiler 4.2.6. Ideally the pipeline should be run in CellProfiler 4.2.6, but should work on CellProfiler 4.2.5 as well. A description of the modules that current pipeline comprises is provided below along with the results of running the image analysis modules on example images chosen from the high-contrast, low-contrast, and other image sets.
 
-I. The metadata and names and types modules were changed to extract sample IDs and and channel names from the image file names
+#### I. The metadata and names and types modules were changed to extract sample IDs and and channel names from the image file names
 
 ![image](https://github.com/COBA-NIH/McAllister_Spasic_C-S-Project/assets/139376717/2046ec8e-620d-4d23-a7c9-dacd294003bf)
 
@@ -11,38 +11,29 @@ I. The metadata and names and types modules were changed to extract sample IDs a
 ![image](https://github.com/COBA-NIH/McAllister_Spasic_C-S-Project/assets/139376717/952f1a75-ef96-4ef8-9224-7ce4fc8dcdec)
 
 
-II. IdentifyPrimaryObject module was modified to ensure accurate segmentation of the variably sized nuclei and discrete as well as the clumped nuclei from the high-contrast, low-contrast, and other images
+#### II. IdentifyPrimaryObject module was modified to ensure accurate segmentation of the variably sized nuclei and discrete as well as the clumped nuclei
+
+![image](https://github.com/COBA-NIH/McAllister_Spasic_C-S-Project/assets/139376717/e8f3d223-8155-4d04-8c03-c651b793ad51)
 
 
-![image](https://github.com/COBA-NIH/McAllister_Spasic_CD8-SMA-tumors/assets/139376717/7cb391ac-699d-4ba5-aee1-16139cf51e02)
+Example (image set 1)
+
+![image](https://github.com/COBA-NIH/McAllister_Spasic_C-S-Project/assets/139376717/d2419e67-b11f-4695-a368-159e0a0c88d3)
 
 
-A. Example from high-contrast image
+Example (image set 2)
+
+![image](https://github.com/COBA-NIH/McAllister_Spasic_C-S-Project/assets/139376717/5b4aa4e1-dd23-4110-bc0e-307256509fbd)
 
 
-![image](https://github.com/COBA-NIH/McAllister_Spasic_CD8-SMA-tumors/assets/139376717/7619e78d-8697-4948-a8c1-3332a64120a1)
-
-
-B. Example from low-contrast image
-
-
-![image](https://github.com/COBA-NIH/McAllister_Spasic_CD8-SMA-tumors/assets/139376717/0118e47c-0c90-43d9-9303-3ffde5f4a33b)
-
-
-C. Example from other image
-
-
-![image](https://github.com/COBA-NIH/McAllister_Spasic_CD8-SMA-tumors/assets/139376717/06c36c79-b966-490a-9e93-ced0bb327dc7)
-
-
-III. IdentifySecondaryObject module was modified to identify the cell boundaries in the CD8 single channel images using Distance-N method, as there were no cytoplasmic stain available
+#### III. IdentifySecondaryObject module was modified to identify the cell boundaries using Distance-N method, as there were no cytoplasmic stain available
 
 
 ![image](https://github.com/COBA-NIH/McAllister_Spasic_CD8-SMA-tumors/assets/139376717/01a35775-6a48-45a1-a298-bf4d3a84267c)
 
 
 
-IV. IdentifyTertiaryObject module was used to identify cytoplasm of the cells
+#### IV. IdentifyTertiaryObject module was used to identify cytoplasm of the cells
 
 
 ![image](https://github.com/COBA-NIH/McAllister_Spasic_CD8-SMA-tumors/assets/139376717/74286605-e156-445c-8a93-eb7d5f11de8b)
