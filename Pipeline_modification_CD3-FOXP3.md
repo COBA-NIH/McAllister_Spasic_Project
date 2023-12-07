@@ -31,12 +31,15 @@ Example (image set 2)
 
 ![image](https://github.com/COBA-NIH/McAllister_Spasic_C-S-Project/assets/139376717/4c8b441d-7dba-4e87-b384-2f54a6806d88)
 
-
 ![image](https://github.com/COBA-NIH/McAllister_Spasic_C-S-Project/assets/139376717/b295e111-995c-4e4b-ace2-9831ab42f8b8)
 
 
 #### IV. IdentifyTertiaryObject module was used to identify cytoplasm of the cells
 
+
+![image](https://github.com/COBA-NIH/McAllister_Spasic_C-S-Project/assets/139376717/8c44554c-47dc-42b9-8f32-aa0ed537c418)
+
+![image](https://github.com/COBA-NIH/McAllister_Spasic_C-S-Project/assets/139376717/cd81dfed-fce0-4a4c-80f3-245a6460b091)
 
 
 
@@ -49,13 +52,13 @@ Example (image set 2)
 
 
 
-#### VI. Measuring FOXP3-positive cells: Thresholding module was applied to identify CD8-positive cells and the MaskObjects module was used to only retain the CD8-positive cells and exclude the remaining areas. Accuracy of CD8-positive cell identifcation was examined by overlaying outlines of the masks on the single-channel CD8-image using OverlayOutlines
+#### VI. Identifying FOXP3-positive cells: Thresholding module was applied to identify CD8-positive cells and the MaskObjects module was used to only retain the CD8-positive cells and exclude the remaining areas. Accuracy of CD8-positive cell identifcation was examined by overlaying outlines of the masks on the single-channel CD8-image using OverlayOutlines
 
 
 
 
 
-#### VII. Finally, the following modules were added to address the research questions for this study:
+#### VII. Finally, the following modules were added to measure marker intensities and double-positive (CD3pos-FOXP3pos) cells:
   (i) MeasureImageAreaOccupied: To measure SMA-positive tissue area
   (ii) MeasureObjectNeighbours: To measure SMA-positive areas within 20u, 50u, and 100u from CD8-positive cells
   (iii) DistanceTransform: For more detailed neighborhood analyses for CD8-positive cells
