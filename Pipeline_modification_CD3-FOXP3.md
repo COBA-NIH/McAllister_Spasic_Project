@@ -43,27 +43,9 @@ Example (image set 2)
 
 
 
-#### V. Identifying CD3-positive cells: Thresholding module was applied to identify CD8-positive cells and the MaskObjects module was used to only retain the CD8-positive cells and exclude the remaining areas. Accuracy of CD8-positive cell identifcation was examined by overlaying outlines of the masks on the single-channel CD8-image using OverlayOutlines
+#### V. Identifying CD3-positive cells, FOXP3-positive cells, and double positive cells: The modules Threshold and MaskObjects were used to identify cells positive for CD3 and/or FOXP3 and OverlayOutlines was used to (i) test the accuracy of positive cell identification and (ii) to visualise the double-positive cells. 
+
+![image](https://github.com/COBA-NIH/McAllister_Spasic_C-S-Project/assets/139376717/2415f435-6c75-47f7-a63c-d334685ce8b9)
 
 
-
-
-
-
-
-
-#### VI. Identifying FOXP3-positive cells: Thresholding module was applied to identify CD8-positive cells and the MaskObjects module was used to only retain the CD8-positive cells and exclude the remaining areas. Accuracy of CD8-positive cell identifcation was examined by overlaying outlines of the masks on the single-channel CD8-image using OverlayOutlines
-
-
-
-
-
-#### VII. Finally, the following modules were added to measure marker intensities and double-positive (CD3pos-FOXP3pos) cells:
-  (i) MeasureImageAreaOccupied: To measure SMA-positive tissue area
-  (ii) MeasureObjectNeighbours: To measure SMA-positive areas within 20u, 50u, and 100u from CD8-positive cells
-  (iii) DistanceTransform: For more detailed neighborhood analyses for CD8-positive cells
-
-
-
-
-
+#### VI. Counting CD3-FOXP3-doublepositive cells: RelateObjects module was used to count the double-positive cells and the MeasureObjectIntensity and MeasureObjectColocalization were used measure the marker expressions.
