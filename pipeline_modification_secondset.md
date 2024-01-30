@@ -2,6 +2,7 @@
 
 For the second set of images, the challenge is addressing the variability in staining quality in identifying SMA-positive cells, getting rid of false-positive areas, and identifying SMA-positive cells (fibroblasts) which are elongated in shape.
 below are some example images indicating the performance of the pipeline on the second set of images.
+Pipeline was run on 42 image sets (126 images)
 
 #### I. Primary, secondary, and tertiary object identification seem to be working fine / requiring minor modifications
 
@@ -19,6 +20,9 @@ below are some example images indicating the performance of the pipeline on the 
 ![image](https://github.com/COBA-NIH/McAllister_Spasic_C-S-Project/assets/139376717/b75fe0a3-9401-4a52-94eb-2428a14d23bf)
 
 
+#### III. Original pipeline is picking up some false-positive signals
+
+![image](https://github.com/COBA-NIH/McAllister_Spasic_C-S-Project/assets/139376717/136db19c-9d95-43ba-8906-0328827e11d5)
 
 
 
