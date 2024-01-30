@@ -25,6 +25,21 @@ Pipeline was run on 42 image sets (126 images)
 ![image](https://github.com/COBA-NIH/McAllister_Spasic_C-S-Project/assets/139376717/136db19c-9d95-43ba-8906-0328827e11d5)
 
 
+#### IV. Examples of identifying SMA-positive areas after modifying outlier fractions, deviations, and variance methods
+
+Some of the false-negative cells can be filtered out but this is filtering out some weakly-stained parts of the fibroblasts (elongated cells)
+
+![image](https://github.com/COBA-NIH/McAllister_Spasic_C-S-Project/assets/139376717/4dad12fc-322f-4a9b-a600-aa894b6a9bd5)
+
+
+
+
+
+
+
+
+
+
 
 
 
