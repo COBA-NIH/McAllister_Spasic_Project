@@ -7,7 +7,7 @@ The dataset comprises High-contrast images [single-channel grayscale images; DAP
 ### The goals are to quantify:
 1) The number of CD8+ cells
 2) The % area of tissue that is SMA+
-3) Distance association of CD8+ cells and SMA+ cells, i.e., measutrement of the average dustance of CD8+ cells from nearest SMA+ cell, and the number of CD8+ cells within a given distance (20, 50, 100, and 200 um) of SMA+ cells
+3) Distance association of CD8+ cells and SMA+ cells, i.e., measurement of the average distance of CD8+ cells from nearest SMA+ area, and the number of CD8+ cells within a given distance (20, 50, 100, and 200 um) of SMA+ areas
 
 ### Challenges
 1) Variations in the staining intensity of SMA
