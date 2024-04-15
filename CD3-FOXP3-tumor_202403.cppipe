@@ -1,0 +1,349 @@
+CellProfiler Pipeline: http://www.cellprofiler.org
+Version:5
+DateRevision:426
+GitHash:
+ModuleCount:22
+HasImagePlaneDetails:False
+
+Images:[module_num:1|svn_version:'Unknown'|variable_revision_number:2|show_window:False|notes:['']|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    :
+    Filter images?:No filtering
+    Select the rule criteria:and (extension does isimage) (directory doesnot containregexp "[\\\\\\\\/]\\\\.")
+
+Metadata:[module_num:2|svn_version:'Unknown'|variable_revision_number:6|show_window:False|notes:['The Metadata module optionally allows you to extract information describing your images (i.e, metadata) which will be stored along with your measurements. This information can be contained in the file name and/or location, or in an external file.', '—', 'Settings converted from legacy pipeline.']|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Extract metadata?:Yes
+    Metadata data type:Text
+    Metadata types:{}
+    Extraction method count:1
+    Metadata extraction method:Extract from file/folder names
+    Metadata source:File name
+    Regular expression to extract from file name:^(?P<Sample_ID>.*)_(?P<Channel_Name>.*).tif
+    Regular expression to extract from folder name:(?P<Date>[0-9]{4}_[0-9]{2}_[0-9]{2})$
+    Extract metadata from:All images
+    Select the filtering criteria:and (or (file does contain ""))
+    Metadata file location:Elsewhere...|
+    Match file and image metadata:[]
+    Use case insensitive matching?:No
+    Metadata file name:
+    Does cached metadata exist?:Yes
+
+NamesAndTypes:[module_num:3|svn_version:'Unknown'|variable_revision_number:8|show_window:False|notes:['The NamesAndTypes module allows you to assign a meaningful name to each image by which other modules will refer to it.', '—', 'Settings converted from legacy pipeline.', 'Please change any color images from "Load as Grayscale image" to "Load as Color image"']|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Assign a name to:Images matching rules
+    Select the image type:Grayscale image
+    Name to assign these images:DNA
+    Match metadata:[]
+    Image set matching method:Order
+    Set intensity range from:Image metadata
+    Assignments count:3
+    Single images count:0
+    Maximum intensity:255.0
+    Process as 3D?:No
+    Relative pixel spacing in X:1.0
+    Relative pixel spacing in Y:1.0
+    Relative pixel spacing in Z:1.0
+    Select the rule criteria:and (file does contain "DAPI")
+    Name to assign these images:DAPI
+    Name to assign these objects:Cell
+    Select the image type:Grayscale image
+    Set intensity range from:Image metadata
+    Maximum intensity:255.0
+    Select the rule criteria:and (file does contain "Cy5")
+    Name to assign these images:Cy5_FoxP3
+    Name to assign these objects:Nucleus
+    Select the image type:Grayscale image
+    Set intensity range from:Image metadata
+    Maximum intensity:255.0
+    Select the rule criteria:and (file does contain "FITC")
+    Name to assign these images:FITC_CD3
+    Name to assign these objects:Cytoplasm
+    Select the image type:Grayscale image
+    Set intensity range from:Image metadata
+    Maximum intensity:255.0
+
+Groups:[module_num:4|svn_version:'Unknown'|variable_revision_number:2|show_window:False|notes:['The Groups module optionally allows you to split your list of images into image subsets (groups) which will be processed independently of each other. Examples of groupings include screening batches, microtiter plates, time-lapse movies, etc.', '—', 'Settings converted from legacy pipeline.']|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Do you want to group your images?:No
+    grouping metadata count:1
+    Metadata category:None
+
+RunStarDist:[module_num:5|svn_version:'Unknown'|variable_revision_number:1|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select the input image:DAPI
+    Model Type:2D
+    Name the output object:Nuclei
+    Tile input image?:No
+    Horizontal tiles:1
+    Vertical tiles:1
+    Save probability image?:No
+    Name the probability image:Probabilities
+    Model folder:Elsewhere...|
+    Model:Versatile (fluorescent nuclei)
+    Model:3D_demo
+    Probability threshold:0.4
+    Overlap threshold:0.4
+    Manually set how much GPU memory each worker can use?:No
+    GPU memory (in GB) for each worker:0.5
+
+IdentifySecondaryObjects:[module_num:6|svn_version:'Unknown'|variable_revision_number:10|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select the input objects:Nuclei
+    Name the objects to be identified:Cells
+    Select the method to identify the secondary objects:Distance - N
+    Select the input image:DAPI
+    Number of pixels by which to expand the primary objects:1
+    Regularization factor:0.05
+    Discard secondary objects touching the border of the image?:No
+    Discard the associated primary objects?:No
+    Name the new primary objects:FilteredNuclei
+    Fill holes in identified objects?:Yes
+    Threshold setting version:12
+    Threshold strategy:Global
+    Thresholding method:Minimum Cross-Entropy
+    Threshold smoothing scale:0.0
+    Threshold correction factor:1.0
+    Lower and upper bounds on threshold:0.0,1.0
+    Manual threshold:0.0
+    Select the measurement to threshold with:None
+    Two-class or three-class thresholding?:Two classes
+    Log transform before thresholding?:No
+    Assign pixels in the middle intensity class to the foreground or the background?:Foreground
+    Size of adaptive window:50
+    Lower outlier fraction:0.05
+    Upper outlier fraction:0.05
+    Averaging method:Mean
+    Variance method:Standard deviation
+    # of deviations:2.0
+    Thresholding method:Minimum Cross-Entropy
+
+IdentifyTertiaryObjects:[module_num:7|svn_version:'Unknown'|variable_revision_number:3|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select the larger identified objects:Cells
+    Select the smaller identified objects:Nuclei
+    Name the tertiary objects to be identified:Cytoplasm
+    Shrink smaller object prior to subtraction?:Yes
+
+Threshold:[module_num:8|svn_version:'Unknown'|variable_revision_number:12|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select the input image:FITC_CD3
+    Name the output image:ThresholdCD3
+    Threshold strategy:Global
+    Thresholding method:Robust Background
+    Threshold smoothing scale:0.0
+    Threshold correction factor:1.0
+    Lower and upper bounds on threshold:0.2,1.0
+    Manual threshold:0.0
+    Select the measurement to threshold with:None
+    Two-class or three-class thresholding?:Two classes
+    Log transform before thresholding?:No
+    Assign pixels in the middle intensity class to the foreground or the background?:Foreground
+    Size of adaptive window:200
+    Lower outlier fraction:0.05
+    Upper outlier fraction:0.05
+    Averaging method:Mean
+    Variance method:Standard deviation
+    # of deviations:3
+    Thresholding method:Minimum Cross-Entropy
+
+MaskObjects:[module_num:9|svn_version:'Unknown'|variable_revision_number:3|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select objects to be masked:Cells
+    Name the masked objects:CD3poscells
+    Mask using a region defined by other objects or by binary image?:Image
+    Select the masking object:None
+    Select the masking image:ThresholdCD3
+    Handling of objects that are partially masked:Remove depending on overlap
+    Fraction of object that must overlap:0.3
+    Numbering of resulting objects:Renumber
+    Invert the mask?:No
+
+OverlayOutlines:[module_num:10|svn_version:'Unknown'|variable_revision_number:4|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Display outlines on a blank image?:No
+    Select image on which to display outlines:FITC_CD3
+    Name the output image:CD3StainOutlines
+    Outline display mode:Color
+    Select method to determine brightness of outlines:Max of image
+    How to outline:Thick
+    Select outline color:red
+    Select objects to display:CD3poscells
+
+Threshold:[module_num:11|svn_version:'Unknown'|variable_revision_number:12|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select the input image:Cy5_FoxP3
+    Name the output image:ThresholdFoxP3
+    Threshold strategy:Global
+    Thresholding method:Robust Background
+    Threshold smoothing scale:0.0
+    Threshold correction factor:1.0
+    Lower and upper bounds on threshold:0.3,1.0
+    Manual threshold:0.0
+    Select the measurement to threshold with:None
+    Two-class or three-class thresholding?:Two classes
+    Log transform before thresholding?:No
+    Assign pixels in the middle intensity class to the foreground or the background?:Foreground
+    Size of adaptive window:50
+    Lower outlier fraction:0.05
+    Upper outlier fraction:0.05
+    Averaging method:Mean
+    Variance method:Median absolute deviation
+    # of deviations:4
+    Thresholding method:Robust Background
+
+MaskObjects:[module_num:12|svn_version:'Unknown'|variable_revision_number:3|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select objects to be masked:Cells
+    Name the masked objects:FoxP3poscells
+    Mask using a region defined by other objects or by binary image?:Image
+    Select the masking object:None
+    Select the masking image:ThresholdFoxP3
+    Handling of objects that are partially masked:Remove depending on overlap
+    Fraction of object that must overlap:0.2
+    Numbering of resulting objects:Renumber
+    Invert the mask?:No
+
+OverlayOutlines:[module_num:13|svn_version:'Unknown'|variable_revision_number:4|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Display outlines on a blank image?:No
+    Select image on which to display outlines:Cy5_FoxP3
+    Name the output image:FoxP3StainOutlines
+    Outline display mode:Color
+    Select method to determine brightness of outlines:Max of image
+    How to outline:Inner
+    Select outline color:#21FF06
+    Select objects to display:FoxP3poscells
+
+OverlayOutlines:[module_num:14|svn_version:'Unknown'|variable_revision_number:4|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Display outlines on a blank image?:No
+    Select image on which to display outlines:FITC_CD3
+    Name the output image:CD3_FOXP3_doublepos
+    Outline display mode:Color
+    Select method to determine brightness of outlines:Max of image
+    How to outline:Thick
+    Select outline color:red
+    Select objects to display:CD3poscells
+    Select outline color:green
+    Select objects to display:FoxP3poscells
+
+RelateObjects:[module_num:15|svn_version:'Unknown'|variable_revision_number:5|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Parent objects:CD3poscells
+    Child objects:FoxP3poscells
+    Calculate child-parent distances?:None
+    Calculate per-parent means for all child measurements?:Yes
+    Calculate distances to other parents?:No
+    Do you want to save the children with parents as a new object set?:Yes
+    Name the output object:Doubleposcells
+    Parent name:None
+
+MeasureObjectIntensity:[module_num:16|svn_version:'Unknown'|variable_revision_number:4|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select images to measure:Cy5_FoxP3, FITC_CD3
+    Select objects to measure:Doubleposcells, CD3poscells, Cytoplasm, FoxP3poscells
+
+MeasureColocalization:[module_num:17|svn_version:'Unknown'|variable_revision_number:5|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select images to measure:Cy5_FoxP3, FITC_CD3
+    Set threshold as percentage of maximum intensity for the images:10
+    Select where to measure correlation:Within objects
+    Select objects to measure:CD3poscells, Doubleposcells, FoxP3poscells
+    Run all metrics?:Yes
+    Calculate correlation and slope metrics?:Yes
+    Calculate the Manders coefficients?:Yes
+    Calculate the Rank Weighted Colocalization coefficients?:Yes
+    Calculate the Overlap coefficients?:Yes
+    Calculate the Manders coefficients using Costes auto threshold?:Yes
+    Method for Costes thresholding:Faster
+
+GrayToColor:[module_num:18|svn_version:'Unknown'|variable_revision_number:4|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select a color scheme:RGB
+    Rescale intensity:Yes
+    Select the image to be colored red:Cy5_FoxP3
+    Select the image to be colored green:FITC_CD3
+    Select the image to be colored blue:Leave this black
+    Name the output image:CD3_FoxP3_color
+    Relative weight for the red image:1.0
+    Relative weight for the green image:1.0
+    Relative weight for the blue image:1.0
+    Select the image to be colored cyan:Leave this black
+    Select the image to be colored magenta:Leave this black
+    Select the image to be colored yellow:Leave this black
+    Select the image that determines brightness:Leave this black
+    Relative weight for the cyan image:1.0
+    Relative weight for the magenta image:1.0
+    Relative weight for the yellow image:1.0
+    Relative weight for the brightness image:1.0
+    Hidden:1
+    Image name:None
+    Color:#ff0000
+    Weight:1.0
+
+SaveImages:[module_num:19|svn_version:'Unknown'|variable_revision_number:16|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select the type of image to save:Image
+    Select the image to save:CD3StainOutlines
+    Select method for constructing file names:From image filename
+    Select image name for file prefix:FITC_CD3
+    Enter single file name:OrigRedColor
+    Number of digits:4
+    Append a suffix to the image file name?:Yes
+    Text to append to the image name:_CD3_outlines
+    Saved file format:png
+    Output file location:Elsewhere...|D:\\C-S_Project\\Images_202401\\Images_output_CD3_FoxP3_20240315
+    Image bit depth:8-bit integer
+    Overwrite existing files without warning?:Yes
+    When to save:Every cycle
+    Record the file and path information to the saved image?:No
+    Create subfolders in the output folder?:No
+    Base image folder:Elsewhere...|\\\\iodine\\imaging_analysis\\2011_07_13_TargetAccelerator_CancerProgram_MPG\\2013_10_11_SIGMA2_Pilot
+    How to save the series:T (Time)
+    Save with lossless compression?:No
+
+SaveImages:[module_num:20|svn_version:'Unknown'|variable_revision_number:16|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select the type of image to save:Image
+    Select the image to save:FoxP3StainOutlines
+    Select method for constructing file names:From image filename
+    Select image name for file prefix:Cy5_FoxP3
+    Enter single file name:OrigBlueColor
+    Number of digits:4
+    Append a suffix to the image file name?:Yes
+    Text to append to the image name:_FoxP3_outlines
+    Saved file format:png
+    Output file location:Elsewhere...|D:\\C-S_Project\\Images_202401\\Images_output_CD3_FoxP3_20240315
+    Image bit depth:8-bit integer
+    Overwrite existing files without warning?:Yes
+    When to save:Every cycle
+    Record the file and path information to the saved image?:No
+    Create subfolders in the output folder?:No
+    Base image folder:Elsewhere...|\\\\iodine\\imaging_analysis\\2011_07_13_TargetAccelerator_CancerProgram_MPG\\2013_10_11_SIGMA2_Pilot
+    How to save the series:T (Time)
+    Save with lossless compression?:No
+
+SaveImages:[module_num:21|svn_version:'Unknown'|variable_revision_number:16|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select the type of image to save:Image
+    Select the image to save:CD3_FOXP3_doublepos
+    Select method for constructing file names:From image filename
+    Select image name for file prefix:FITC_CD3
+    Enter single file name:OrigBlueColor
+    Number of digits:4
+    Append a suffix to the image file name?:Yes
+    Text to append to the image name:_Doublepos_outlines
+    Saved file format:png
+    Output file location:Elsewhere...|D:\\C-S_Project\\Images_202401\\Images_output_CD3_FoxP3_20240315
+    Image bit depth:8-bit integer
+    Overwrite existing files without warning?:Yes
+    When to save:Every cycle
+    Record the file and path information to the saved image?:No
+    Create subfolders in the output folder?:No
+    Base image folder:Elsewhere...|\\\\iodine\\imaging_analysis\\2011_07_13_TargetAccelerator_CancerProgram_MPG\\2013_10_11_SIGMA2_Pilot
+    How to save the series:T (Time)
+    Save with lossless compression?:No
+
+ExportToSpreadsheet:[module_num:22|svn_version:'Unknown'|variable_revision_number:13|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select the column delimiter:Comma (",")
+    Add image metadata columns to your object data file?:Yes
+    Add image file and folder names to your object data file?:No
+    Select the measurements to export:No
+    Calculate the per-image mean values for object measurements?:No
+    Calculate the per-image median values for object measurements?:No
+    Calculate the per-image standard deviation values for object measurements?:No
+    Output file location:Default Input Folder sub-folder|Documents/Collaboration-Service/McAllister-Spasic/CD3-FOXP3-tumor_test1
+    Create a GenePattern GCT file?:No
+    Select source of sample row name:Metadata
+    Select the image to use as the identifier:None
+    Select the metadata to use as the identifier:None
+    Export all measurement types?:No
+    Press button to select measurements:Image|Scaling_Cy5_CD3,Image|Scaling_FITC_FoxP3,Image|Scaling_DAPI,Image|ExecutionTime_01Images,Image|ExecutionTime_04Groups,Image|ExecutionTime_15RelateObjects,Image|ExecutionTime_05IdentifyPrimaryObjects,Image|ExecutionTime_02Metadata,Image|ExecutionTime_20SaveImages,Image|ExecutionTime_07IdentifyTertiaryObjects,Image|ExecutionTime_21SaveImages,Image|ExecutionTime_16MeasureObjectIntensity,Image|ExecutionTime_06IdentifySecondaryObjects,Image|ExecutionTime_11Threshold,Image|ExecutionTime_13OverlayOutlines,Image|ExecutionTime_10OverlayOutlines,Image|ExecutionTime_18GrayToColor,Image|ExecutionTime_19SaveImages,Image|ExecutionTime_09MaskObjects,Image|ExecutionTime_03NamesAndTypes,Image|ExecutionTime_12MaskObjects,Image|ExecutionTime_14OverlayOutlines,Image|ExecutionTime_08Threshold,Image|ExecutionTime_17MeasureColocalization,Image|Count_CD3poscells,Image|Count_Doubleposcells,Image|Count_Nuclei,Image|Count_Cytoplasm,Image|Count_FoxP3poscells,Image|Count_Cells,Image|ModuleError_14OverlayOutlines,Image|ModuleError_07IdentifyTertiaryObjects,Image|ModuleError_01Images,Image|ModuleError_12MaskObjects,Image|ModuleError_10OverlayOutlines,Image|ModuleError_08Threshold,Image|ModuleError_02Metadata,Image|ModuleError_21SaveImages,Image|ModuleError_19SaveImages,Image|ModuleError_16MeasureObjectIntensity,Image|ModuleError_03NamesAndTypes,Image|ModuleError_06IdentifySecondaryObjects,Image|ModuleError_18GrayToColor,Image|ModuleError_20SaveImages,Image|ModuleError_11Threshold,Image|ModuleError_17MeasureColocalization,Image|ModuleError_15RelateObjects,Image|ModuleError_05IdentifyPrimaryObjects,Image|ModuleError_04Groups,Image|ModuleError_13OverlayOutlines,Image|ModuleError_09MaskObjects,Image|FileName_FITC_FoxP3,Image|FileName_Cy5_CD3,Image|FileName_DAPI,Image|Height_FITC_FoxP3,Image|Height_DAPI,Image|Height_Cy5_CD3,Image|Group_Number,Image|Group_Length,Image|Group_Index,Image|Threshold_OrigThreshold_ThresholdCD3,Image|Threshold_OrigThreshold_ThresholdFoxP3,Image|Threshold_OrigThreshold_Nuclei,Image|Threshold_SumOfEntropies_ThresholdCD3,Image|Threshold_SumOfEntropies_ThresholdFoxP3,Image|Threshold_SumOfEntropies_Nuclei,Image|Threshold_FinalThreshold_Nuclei,Image|Threshold_FinalThreshold_ThresholdCD3,Image|Threshold_FinalThreshold_ThresholdFoxP3,Image|Threshold_WeightedVariance_ThresholdCD3,Image|Threshold_WeightedVariance_Nuclei,Image|Threshold_WeightedVariance_ThresholdFoxP3,Image|Threshold_GuideThreshold_Nuclei,Image|Metadata_Series,Image|Metadata_Channel_Name,Image|Metadata_Sample_ID,Image|Metadata_Frame,Image|Metadata_FileLocation,Image|MD5Digest_Cy5_CD3,Image|MD5Digest_DAPI,Image|MD5Digest_FITC_FoxP3,Image|Series_FITC_FoxP3,Image|Series_Cy5_CD3,Image|Series_DAPI,Image|Frame_Cy5_CD3,Image|Frame_DAPI,Image|Frame_FITC_FoxP3,Image|Width_DAPI,Image|Width_FITC_FoxP3,Image|Width_Cy5_CD3,Image|URL_DAPI,Image|URL_Cy5_CD3,Image|URL_FITC_FoxP3,Image|PathName_FITC_FoxP3,Image|PathName_DAPI,Image|PathName_Cy5_CD3,FoxP3poscells|Intensity_MeanIntensity_Cy5_CD3,FoxP3poscells|Intensity_MeanIntensity_FITC_FoxP3,FoxP3poscells|Intensity_MeanIntensityEdge_Cy5_CD3,FoxP3poscells|Intensity_MeanIntensityEdge_FITC_FoxP3,FoxP3poscells|Intensity_UpperQuartileIntensity_FITC_FoxP3,FoxP3poscells|Intensity_UpperQuartileIntensity_Cy5_CD3,FoxP3poscells|Intensity_MaxIntensity_Cy5_CD3,FoxP3poscells|Intensity_MaxIntensity_FITC_FoxP3,FoxP3poscells|Intensity_StdIntensity_Cy5_CD3,FoxP3poscells|Intensity_StdIntensity_FITC_FoxP3,FoxP3poscells|Intensity_MedianIntensity_Cy5_CD3,FoxP3poscells|Intensity_MedianIntensity_FITC_FoxP3,FoxP3poscells|Intensity_MADIntensity_FITC_FoxP3,FoxP3poscells|Intensity_MADIntensity_Cy5_CD3,FoxP3poscells|Intensity_MaxIntensityEdge_FITC_FoxP3,FoxP3poscells|Intensity_MaxIntensityEdge_Cy5_CD3,FoxP3poscells|Intensity_MassDisplacement_Cy5_CD3,FoxP3poscells|Intensity_MassDisplacement_FITC_FoxP3,FoxP3poscells|Intensity_MinIntensity_FITC_FoxP3,FoxP3poscells|Intensity_MinIntensity_Cy5_CD3,FoxP3poscells|Intensity_StdIntensityEdge_Cy5_CD3,FoxP3poscells|Intensity_StdIntensityEdge_FITC_FoxP3,FoxP3poscells|Intensity_MinIntensityEdge_Cy5_CD3,FoxP3poscells|Intensity_MinIntensityEdge_FITC_FoxP3,FoxP3poscells|Intensity_IntegratedIntensity_FITC_FoxP3,FoxP3poscells|Intensity_IntegratedIntensity_Cy5_CD3,FoxP3poscells|Intensity_IntegratedIntensityEdge_Cy5_CD3,FoxP3poscells|Intensity_IntegratedIntensityEdge_FITC_FoxP3,FoxP3poscells|Intensity_LowerQuartileIntensity_FITC_FoxP3,FoxP3poscells|Intensity_LowerQuartileIntensity_Cy5_CD3,FoxP3poscells|Correlation_Costes_Cy5_CD3_FITC_FoxP3,FoxP3poscells|Correlation_Costes_FITC_FoxP3_Cy5_CD3,FoxP3poscells|Correlation_Overlap_Cy5_CD3_FITC_FoxP3,FoxP3poscells|Correlation_RWC_Cy5_CD3_FITC_FoxP3,FoxP3poscells|Correlation_RWC_FITC_FoxP3_Cy5_CD3,FoxP3poscells|Correlation_Correlation_Cy5_CD3_FITC_FoxP3,FoxP3poscells|Correlation_Manders_FITC_FoxP3_Cy5_CD3,FoxP3poscells|Correlation_Manders_Cy5_CD3_FITC_FoxP3,FoxP3poscells|Correlation_K_FITC_FoxP3_Cy5_CD3,FoxP3poscells|Correlation_K_Cy5_CD3_FITC_FoxP3,FoxP3poscells|Location_Center_Y,FoxP3poscells|Location_Center_X,FoxP3poscells|Location_CenterMassIntensity_Z_FITC_FoxP3,FoxP3poscells|Location_CenterMassIntensity_Z_Cy5_CD3,FoxP3poscells|Location_CenterMassIntensity_X_FITC_FoxP3,FoxP3poscells|Location_CenterMassIntensity_X_Cy5_CD3,FoxP3poscells|Location_CenterMassIntensity_Y_Cy5_CD3,FoxP3poscells|Location_CenterMassIntensity_Y_FITC_FoxP3,FoxP3poscells|Location_MaxIntensity_Z_FITC_FoxP3,FoxP3poscells|Location_MaxIntensity_Z_Cy5_CD3,FoxP3poscells|Location_MaxIntensity_Y_FITC_FoxP3,FoxP3poscells|Location_MaxIntensity_Y_Cy5_CD3,FoxP3poscells|Location_MaxIntensity_X_Cy5_CD3,FoxP3poscells|Location_MaxIntensity_X_FITC_FoxP3,FoxP3poscells|Number_Object_Number,FoxP3poscells|Parent_Cells,FoxP3poscells|Parent_CD3poscells,FoxP3poscells|Children_Doubleposcells_Count,Cells|Children_Cytoplasm_Count,Cells|Children_CD3poscells_Count,Cells|Children_FoxP3poscells_Count,Cells|Location_Center_Y,Cells|Location_Center_X,Cells|Location_Center_Z,Cells|Parent_Nuclei,Cells|Number_Object_Number,CD3poscells|Location_CenterMassIntensity_Y_Cy5_CD3,CD3poscells|Location_CenterMassIntensity_Y_FITC_FoxP3,CD3poscells|Location_CenterMassIntensity_Z_Cy5_CD3,CD3poscells|Location_CenterMassIntensity_Z_FITC_FoxP3,CD3poscells|Location_CenterMassIntensity_X_FITC_FoxP3,CD3poscells|Location_CenterMassIntensity_X_Cy5_CD3,CD3poscells|Location_MaxIntensity_Y_FITC_FoxP3,CD3poscells|Location_MaxIntensity_Y_Cy5_CD3,CD3poscells|Location_MaxIntensity_Z_Cy5_CD3,CD3poscells|Location_MaxIntensity_Z_FITC_FoxP3,CD3poscells|Location_MaxIntensity_X_FITC_FoxP3,CD3poscells|Location_MaxIntensity_X_Cy5_CD3,CD3poscells|Location_Center_Y,CD3poscells|Location_Center_X,CD3poscells|Correlation_RWC_Cy5_CD3_FITC_FoxP3,CD3poscells|Correlation_RWC_FITC_FoxP3_Cy5_CD3,CD3poscells|Correlation_Correlation_Cy5_CD3_FITC_FoxP3,CD3poscells|Correlation_Costes_FITC_FoxP3_Cy5_CD3,CD3poscells|Correlation_Costes_Cy5_CD3_FITC_FoxP3,CD3poscells|Correlation_Overlap_Cy5_CD3_FITC_FoxP3,CD3poscells|Correlation_Manders_Cy5_CD3_FITC_FoxP3,CD3poscells|Correlation_Manders_FITC_FoxP3_Cy5_CD3,CD3poscells|Correlation_K_Cy5_CD3_FITC_FoxP3,CD3poscells|Correlation_K_FITC_FoxP3_Cy5_CD3,CD3poscells|Number_Object_Number,CD3poscells|Intensity_IntegratedIntensityEdge_Cy5_CD3,CD3poscells|Intensity_IntegratedIntensityEdge_FITC_FoxP3,CD3poscells|Intensity_MeanIntensityEdge_Cy5_CD3,CD3poscells|Intensity_MeanIntensityEdge_FITC_FoxP3,CD3poscells|Intensity_MinIntensity_FITC_FoxP3,CD3poscells|Intensity_MinIntensity_Cy5_CD3,CD3poscells|Intensity_IntegratedIntensity_FITC_FoxP3,CD3poscells|Intensity_IntegratedIntensity_Cy5_CD3,CD3poscells|Intensity_StdIntensityEdge_Cy5_CD3,CD3poscells|Intensity_StdIntensityEdge_FITC_FoxP3,CD3poscells|Intensity_StdIntensity_FITC_FoxP3,CD3poscells|Intensity_StdIntensity_Cy5_CD3,CD3poscells|Intensity_UpperQuartileIntensity_Cy5_CD3,CD3poscells|Intensity_UpperQuartileIntensity_FITC_FoxP3,CD3poscells|Intensity_MedianIntensity_Cy5_CD3,CD3poscells|Intensity_MedianIntensity_FITC_FoxP3,CD3poscells|Intensity_MassDisplacement_FITC_FoxP3,CD3poscells|Intensity_MassDisplacement_Cy5_CD3,CD3poscells|Intensity_MaxIntensityEdge_FITC_FoxP3,CD3poscells|Intensity_MaxIntensityEdge_Cy5_CD3,CD3poscells|Intensity_MaxIntensity_Cy5_CD3,CD3poscells|Intensity_MaxIntensity_FITC_FoxP3,CD3poscells|Intensity_MeanIntensity_FITC_FoxP3,CD3poscells|Intensity_MeanIntensity_Cy5_CD3,CD3poscells|Intensity_MinIntensityEdge_FITC_FoxP3,CD3poscells|Intensity_MinIntensityEdge_Cy5_CD3,CD3poscells|Intensity_MADIntensity_Cy5_CD3,CD3poscells|Intensity_MADIntensity_FITC_FoxP3,CD3poscells|Intensity_LowerQuartileIntensity_Cy5_CD3,CD3poscells|Intensity_LowerQuartileIntensity_FITC_FoxP3,CD3poscells|Children_FoxP3poscells_Count,CD3poscells|Parent_Cells,CD3poscells|Mean_FoxP3poscells_Number_Object_Number,CD3poscells|Mean_FoxP3poscells_Location_Center_Y,CD3poscells|Mean_FoxP3poscells_Location_Center_X,Doubleposcells|Location_Center_X,Doubleposcells|Location_Center_Z,Doubleposcells|Location_Center_Y,Doubleposcells|Location_CenterMassIntensity_X_FITC_FoxP3,Doubleposcells|Location_CenterMassIntensity_X_Cy5_CD3,Doubleposcells|Location_CenterMassIntensity_Y_Cy5_CD3,Doubleposcells|Location_CenterMassIntensity_Y_FITC_FoxP3,Doubleposcells|Location_CenterMassIntensity_Z_FITC_FoxP3,Doubleposcells|Location_CenterMassIntensity_Z_Cy5_CD3,Doubleposcells|Location_MaxIntensity_Y_Cy5_CD3,Doubleposcells|Location_MaxIntensity_Y_FITC_FoxP3,Doubleposcells|Location_MaxIntensity_X_FITC_FoxP3,Doubleposcells|Location_MaxIntensity_X_Cy5_CD3,Doubleposcells|Location_MaxIntensity_Z_FITC_FoxP3,Doubleposcells|Location_MaxIntensity_Z_Cy5_CD3,Doubleposcells|Intensity_StdIntensity_Cy5_CD3,Doubleposcells|Intensity_StdIntensity_FITC_FoxP3,Doubleposcells|Intensity_IntegratedIntensity_FITC_FoxP3,Doubleposcells|Intensity_IntegratedIntensity_Cy5_CD3,Doubleposcells|Intensity_MedianIntensity_Cy5_CD3,Doubleposcells|Intensity_MedianIntensity_FITC_FoxP3,Doubleposcells|Intensity_LowerQuartileIntensity_Cy5_CD3,Doubleposcells|Intensity_LowerQuartileIntensity_FITC_FoxP3,Doubleposcells|Intensity_UpperQuartileIntensity_Cy5_CD3,Doubleposcells|Intensity_UpperQuartileIntensity_FITC_FoxP3,Doubleposcells|Intensity_MeanIntensityEdge_Cy5_CD3,Doubleposcells|Intensity_MeanIntensityEdge_FITC_FoxP3,Doubleposcells|Intensity_MassDisplacement_FITC_FoxP3,Doubleposcells|Intensity_MassDisplacement_Cy5_CD3,Doubleposcells|Intensity_MaxIntensityEdge_FITC_FoxP3,Doubleposcells|Intensity_MaxIntensityEdge_Cy5_CD3,Doubleposcells|Intensity_IntegratedIntensityEdge_Cy5_CD3,Doubleposcells|Intensity_IntegratedIntensityEdge_FITC_FoxP3,Doubleposcells|Intensity_MaxIntensity_Cy5_CD3,Doubleposcells|Intensity_MaxIntensity_FITC_FoxP3,Doubleposcells|Intensity_MinIntensity_Cy5_CD3,Doubleposcells|Intensity_MinIntensity_FITC_FoxP3,Doubleposcells|Intensity_MADIntensity_Cy5_CD3,Doubleposcells|Intensity_MADIntensity_FITC_FoxP3,Doubleposcells|Intensity_MeanIntensity_Cy5_CD3,Doubleposcells|Intensity_MeanIntensity_FITC_FoxP3,Doubleposcells|Intensity_StdIntensityEdge_Cy5_CD3,Doubleposcells|Intensity_StdIntensityEdge_FITC_FoxP3,Doubleposcells|Intensity_MinIntensityEdge_Cy5_CD3,Doubleposcells|Intensity_MinIntensityEdge_FITC_FoxP3,Doubleposcells|Parent_FoxP3poscells,Doubleposcells|Correlation_Correlation_Cy5_CD3_FITC_FoxP3,Doubleposcells|Correlation_Costes_Cy5_CD3_FITC_FoxP3,Doubleposcells|Correlation_Costes_FITC_FoxP3_Cy5_CD3,Doubleposcells|Correlation_Overlap_Cy5_CD3_FITC_FoxP3,Doubleposcells|Correlation_Manders_Cy5_CD3_FITC_FoxP3,Doubleposcells|Correlation_Manders_FITC_FoxP3_Cy5_CD3,Doubleposcells|Correlation_RWC_FITC_FoxP3_Cy5_CD3,Doubleposcells|Correlation_RWC_Cy5_CD3_FITC_FoxP3,Doubleposcells|Correlation_K_Cy5_CD3_FITC_FoxP3,Doubleposcells|Correlation_K_FITC_FoxP3_Cy5_CD3,Doubleposcells|Number_Object_Number,Cytoplasm|Intensity_MaxIntensity_FITC_FoxP3,Cytoplasm|Intensity_MaxIntensity_Cy5_CD3,Cytoplasm|Intensity_MeanIntensity_Cy5_CD3,Cytoplasm|Intensity_MeanIntensity_FITC_FoxP3,Cytoplasm|Intensity_IntegratedIntensityEdge_FITC_FoxP3,Cytoplasm|Intensity_IntegratedIntensityEdge_Cy5_CD3,Cytoplasm|Intensity_StdIntensityEdge_Cy5_CD3,Cytoplasm|Intensity_StdIntensityEdge_FITC_FoxP3,Cytoplasm|Intensity_MeanIntensityEdge_FITC_FoxP3,Cytoplasm|Intensity_MeanIntensityEdge_Cy5_CD3,Cytoplasm|Intensity_MaxIntensityEdge_Cy5_CD3,Cytoplasm|Intensity_MaxIntensityEdge_FITC_FoxP3,Cytoplasm|Intensity_StdIntensity_Cy5_CD3,Cytoplasm|Intensity_StdIntensity_FITC_FoxP3,Cytoplasm|Intensity_MinIntensity_FITC_FoxP3,Cytoplasm|Intensity_MinIntensity_Cy5_CD3,Cytoplasm|Intensity_UpperQuartileIntensity_FITC_FoxP3,Cytoplasm|Intensity_UpperQuartileIntensity_Cy5_CD3,Cytoplasm|Intensity_MedianIntensity_Cy5_CD3,Cytoplasm|Intensity_MedianIntensity_FITC_FoxP3,Cytoplasm|Intensity_MADIntensity_Cy5_CD3,Cytoplasm|Intensity_MADIntensity_FITC_FoxP3,Cytoplasm|Intensity_MassDisplacement_FITC_FoxP3,Cytoplasm|Intensity_MassDisplacement_Cy5_CD3,Cytoplasm|Intensity_LowerQuartileIntensity_Cy5_CD3,Cytoplasm|Intensity_LowerQuartileIntensity_FITC_FoxP3,Cytoplasm|Intensity_IntegratedIntensity_FITC_FoxP3,Cytoplasm|Intensity_IntegratedIntensity_Cy5_CD3,Cytoplasm|Intensity_MinIntensityEdge_Cy5_CD3,Cytoplasm|Intensity_MinIntensityEdge_FITC_FoxP3,Cytoplasm|Number_Object_Number,Cytoplasm|Location_CenterMassIntensity_X_Cy5_CD3,Cytoplasm|Location_CenterMassIntensity_X_FITC_FoxP3,Cytoplasm|Location_CenterMassIntensity_Z_Cy5_CD3,Cytoplasm|Location_CenterMassIntensity_Z_FITC_FoxP3,Cytoplasm|Location_CenterMassIntensity_Y_Cy5_CD3,Cytoplasm|Location_CenterMassIntensity_Y_FITC_FoxP3,Cytoplasm|Location_MaxIntensity_X_FITC_FoxP3,Cytoplasm|Location_MaxIntensity_X_Cy5_CD3,Cytoplasm|Location_MaxIntensity_Z_Cy5_CD3,Cytoplasm|Location_MaxIntensity_Z_FITC_FoxP3,Cytoplasm|Location_MaxIntensity_Y_Cy5_CD3,Cytoplasm|Location_MaxIntensity_Y_FITC_FoxP3,Cytoplasm|Location_Center_Y,Cytoplasm|Location_Center_X,Cytoplasm|Parent_Nuclei,Cytoplasm|Parent_Cells,Experiment|Modification_Timestamp,Experiment|Pipeline_Pipeline,Experiment|Run_Timestamp,Experiment|CellProfiler_Version,Nuclei|Number_Object_Number,Nuclei|Children_Cells_Count,Nuclei|Children_Cytoplasm_Count,Nuclei|Location_Center_X,Nuclei|Location_Center_Y,Nuclei|Location_Center_Z
+    Representation of Nan/Inf:NaN
+    Add a prefix to file names?:No
+    Filename prefix:MyExpt_
+    Overwrite existing files without warning?:No
+    Data to export:Image
+    Combine these object measurements with those of the previous object?:No
+    File name:Image.csv
+    Use the object name for the file name?:No
