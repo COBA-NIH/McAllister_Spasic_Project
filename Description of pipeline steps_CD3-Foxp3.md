@@ -83,7 +83,7 @@ Check the accuracy of detecting FoxP3 cells by overlaying the outlines of the CD
 ### 11. Relate Objects
 Associate the CD3+ cells (parent objects) to the FoxP3+ cells (child objcets)
 
-<img src="Images/doublepositivecells.png" width="600" height="300">
+<img src="Images/doublepositivecells.png" width="900" height="300">
 
 
 ### 12. Overlay Outlines
