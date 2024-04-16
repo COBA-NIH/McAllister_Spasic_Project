@@ -75,7 +75,7 @@ Keeps the thresholded areas of the image using a mask and identifies the cells/n
 
 
 ### 10. OverlayOutlines
-Checks the accuracy of detecting FoxP3 cells by overlaying the outlines of the CD3+ cells on the grayscale FITC image
+Checks the accuracy of detecting FoxP3+ cells by overlaying the outlines of the FoxP3+ cells on the grayscale Cy5 image
 
 <img src="Images/overlayoutllines_foxp3.png" width="600" height="300">
 
