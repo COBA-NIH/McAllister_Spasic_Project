@@ -87,8 +87,9 @@ Associate the CD3+ cells (parent objects) to the FoxP3+ cells (child objcets)
 
 
 ### 12. Overlay Outlines
+Check the accuracy of detecting double positive cells by overlaying the outlines of the CD3+FoxP3+ cells on the grayscale FITC image
 
-
+<img src="Images/overlayoutlines_2.png" width="600" height="300">
 
 
 ### 13. Measure Object Intensity
