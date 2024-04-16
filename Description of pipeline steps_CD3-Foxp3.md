@@ -24,7 +24,7 @@ Check the accuracy of the outlines of the nuclei segmented by RunStarDist
 ### 3. IdentifySecondaryObjects
 Segment the whole cell outlines
 
-<img src="Images/idsecondary.png" width="700" height="300">
+<img src="Images/idsecondary.png" width="400" height="300">
 
 
 ### 4. IdentifyTertiaryObjects
