@@ -63,7 +63,7 @@ Set the intensity threshold for deeming cells asd marker (FoxP3) positive
 ### 9. Maskobjects
 Keep the thresholded areas of the image using a mask and identify the cells present in those areas
 
-<img src="Images/maskobjects_1.png" width="600" height="300">
+<img src="Images/maskobjects_2.png" width="600" height="300">
 
 
 ### 10. OverlayOutlines
