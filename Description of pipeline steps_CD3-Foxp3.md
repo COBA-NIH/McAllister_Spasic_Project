@@ -54,7 +54,7 @@ Set the intensity threshold for deeming cells as marker (CD3) positive
 ### 6. Maskobjects
 Keep the thresholded areas of the image using a mask and identify the cells present in those areas
 
-<img src="Images/maskobjects_1.png" width="600" height="300">
+<img src="Images/maskobjects_1.png" width="600" height="250">
 
 
 ### 7. OverlayOutlines
