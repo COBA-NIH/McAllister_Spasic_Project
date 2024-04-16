@@ -18,7 +18,7 @@ Use the StarDist algorithm (https://github.com/stardist/stardist) to segment nuc
 ### 2. OverlayOutlines
 Check the accuarcy of the outlines of the nuclei segmented by RunStarDist
 
-<img src="Images/overlayoutlines_1.pngpng" width="700" height="300">
+<img src="Images/overlayoutlines_1.png" width="700" height="300">
 
 
 
