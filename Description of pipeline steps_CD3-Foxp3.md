@@ -107,7 +107,9 @@ Creates a color composite image with the three channels - DAPI, FITC, and Foxp3
 
 
 ### 16. Overlay Outlines
+Creates outlines of doublepositive cells on the merged (composite) image for visualization
 
+<img src="Images/overlayoutlines_3.png" width="350" height="300">
 
 
 ### 17. Save Images
