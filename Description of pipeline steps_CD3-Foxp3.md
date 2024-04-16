@@ -113,7 +113,7 @@ Creates outlines of doublepositive cells on the merged (composite) image for vis
 
 
 ### 17. Save Images
-
+Saves all the overlays to designated folders
 
 ### 18. Export to Spreadsheet
-
+Exports all measurements to a spreadsheet for downstream analysis
