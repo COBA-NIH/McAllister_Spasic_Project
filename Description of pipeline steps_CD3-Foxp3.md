@@ -22,82 +22,82 @@
 
 
 ### 1. RunStarDist
-Use the StarDist algorithm (https://github.com/stardist/stardist) to segment nuclei
+Uses the StarDist algorithm (https://github.com/stardist/stardist) to segment nuclei
 
 <img src="Images/runstardist.png" width="700" height="300">
 
 
 ### 2. OverlayOutlines
-Check the accuracy of the outlines of the nuclei segmented by RunStarDist
+Checks the accuracy of the outlines of the nuclei segmented by RunStarDist
 
 <img src="Images/overlayoutlines_1.png" width="700" height="300">
 
 
 ### 3. IdentifySecondaryObjects
-Segment the whole cell outlines
+Segments the whole cell outlines
 
 <img src="Images/idsecondary.png" width="350" height="300">
 
 
 ### 4. IdentifyTertiaryObjects
-Segment cytoplasm (whole cells minus the nuclei)
+Segments cytoplasm (whole cells minus the nuclei)
 
 <img src="Images/idtertiary.png" width="350" height="300">
 
 
 ### 5. Threshold
-Set the intensity threshold for deeming cells as marker (CD3) positive
+Sets the intensity threshold for deeming cells as marker (CD3) positive
 
 <img src="Images/threshold_1.png" width="600" height="300">
 
 
 ### 6. Maskobjects
-Keep the thresholded areas of the image using a mask and identify the cells present in those areas
+Keeps the thresholded areas of the image using a mask and identify the cells present in those areas
 
 <img src="Images/maskobjects_1.png" width="600" height="250">
 
 
 ### 7. OverlayOutlines
-Check the accuracy of detecting CD3+ cells by overlaying the outlines of the CD3+ cells on the grayscale FITC image
+Checks the accuracy of detecting CD3+ cells by overlaying the outlines of the CD3+ cells on the grayscale FITC image
 
 <img src="Images/overlayoutlines_cd3.png" width="600" height="300">
 
 ### 8. Threshold
-Set the intensity threshold for deeming cells asd marker (FoxP3) positive
+Sets the intensity threshold for deeming cells asd marker (FoxP3) positive
 
 <img src="Images/threshold_2.png" width="600" height="250">
 
 
 ### 9. Maskobjects
-Keep the thresholded areas of the image using a mask and identify the cells present in those areas
+Keeps the thresholded areas of the image using a mask and identify the cells present in those areas
 
 <img src="Images/maskobjects_2.png" width="600" height="300">
 
 
 ### 10. OverlayOutlines
-Check the accuracy of detecting FoxP3 cells by overlaying the outlines of the CD3+ cells on the grayscale FITC image
+Checks the accuracy of detecting FoxP3 cells by overlaying the outlines of the CD3+ cells on the grayscale FITC image
 
 <img src="Images/overlayoutllines_foxp3.png" width="600" height="300">
 
 
 ### 11. Relate Objects
-Associate the CD3+ cells (parent objects) to the FoxP3+ cells (child objcets)
+Associates the CD3+ cells (parent objects) to the FoxP3+ cells (child objcets)
 
 <img src="Images/doublepositivecells.png" width="1200" height="300">
 
 
 ### 12. Overlay Outlines
-Check the accuracy of detecting double positive cells by overlaying the outlines of the CD3+FoxP3+ cells on the grayscale FITC image
+Checks the accuracy of detecting double positive cells by overlaying the outlines of the CD3+FoxP3+ cells on the grayscale FITC image
 
 <img src="Images/overlayoutlines_2.png" width="600" height="300">
 
 
 ### 13. Measure Object Intensity
-
+Measures intensities of CD3 expression and FoxP3 expression
 
 
 ### 14. Measure Colocalization
-
+Measures the correlation between CD3+ and FoxP3 intensities
 
 
 ### 15. Gray to Color
