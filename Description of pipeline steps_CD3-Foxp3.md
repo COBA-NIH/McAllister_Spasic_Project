@@ -7,6 +7,7 @@
   - [4. IdentifyTertiaryObjects](#4-identifytertiaryobjects)
   - [5. Threshold](#5-threshold)
   - [6. Maskobjects](#6-maskobjects)
+  - [7. OverlayOutlines](#7-overlayoutlines)
 
 
 ### 1. RunStarDist
@@ -45,8 +46,9 @@ Keep the thresholded areas of the image using a mask and identify the cells pres
 <img src="Images/maskobjects_1.png" width="350" height="300">
 
 
+### 7. OverlayOutlines
+Check the accuracy of detecting CD3+ cells by overlaying the outlines of the CD3+ cells on the grayscale FITC image
 
-
-
+<img src="Images/overlayoutlines_cd3.png" width="600" height="300">
 
 
