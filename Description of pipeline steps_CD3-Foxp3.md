@@ -40,6 +40,9 @@ Set the intensity threshold for deeming cells asd marker positive
 
 
 ### 6. Maskobjects
+Keep the thresholded areas of the image using a mask and identify the cells present in those areas
+
+<img src="Images/maskobjects_1.png" width="350" height="300">
 
 
 
