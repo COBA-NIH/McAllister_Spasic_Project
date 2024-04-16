@@ -16,21 +16,19 @@ Use the StarDist algorithm (https://github.com/stardist/stardist) to segment nuc
 
 
 ### 2. OverlayOutlines
-Check the accuarcy of the outlines of the nuclei segmented by RunStarDist
+Check the accuracy of the outlines of the nuclei segmented by RunStarDist
 
 <img src="Images/overlayoutlines_1.png" width="700" height="300">
 
 
-
-
 ### 3. IdentifySecondaryObjects
+Segment the whole cell outlines
 
-
-
+<img src="Images/idsecondary.png" width="700" height="300">
 
 
 ### 4. IdentifyTertiaryObjects
-
+Segment cytoplasm (whole cells minus the nuclei)
 
 
 
