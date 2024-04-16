@@ -11,6 +11,14 @@
   - [8. Threshold](#8-threshold)
   - [9. Maskobjects](#9-maskobjects)
   - [10. OverlayOutlines](#10-overlayoutlines)
+  - [11. Relate Objects](#11-relate-objects)
+  - [12. Overlay Outlines](#12-overlay-outlines)
+  - [13. Measure Object Intensity](#13-measure-object-intensity)
+  - [14. Measure Colocalization](#14-measure-colocalization)
+  - [15. Gray to Color](#15-gray-to-color)
+  - [16. Overlay Outlines](#16-overlay-outlines)
+  - [17. Save Images](#17-save-images)
+  - [18. Export to Spreadsheet](#18-export-to-spreadsheet)
 
 
 ### 1. RunStarDist
@@ -70,4 +78,37 @@ Keep the thresholded areas of the image using a mask and identify the cells pres
 Check the accuracy of detecting FoxP3 cells by overlaying the outlines of the CD3+ cells on the grayscale FITC image
 
 <img src="Images/overlayoutllines_foxp3.png" width="600" height="300">
+
+
+### 11. Relate Objects
+Associate the CD3+ cells (parent objects) to the FoxP3+ cells (child objcets)
+
+<img src="Images/doublepositivecells.png" width="600" height="300">
+
+
+### 12. Overlay Outlines
+
+
+
+
+### 13. Measure Object Intensity
+
+
+
+### 14. Measure Colocalization
+
+
+
+### 15. Gray to Color
+
+
+
+### 16. Overlay Outlines
+
+
+
+### 17. Save Images
+
+
+### 18. Export to Spreadsheet
 
