@@ -8,6 +8,9 @@
   - [5. Threshold](#5-threshold)
   - [6. Maskobjects](#6-maskobjects)
   - [7. OverlayOutlines](#7-overlayoutlines)
+  - [8. Threshold](#8-threshold)
+  - [9. Maskobjects](#9-maskobjects)
+  - [10. OverlayOutlines](#10-overlayoutlines)
 
 
 ### 1. RunStarDist
@@ -35,7 +38,7 @@ Segment cytoplasm (whole cells minus the nuclei)
 
 
 ### 5. Threshold
-Set the intensity threshold for deeming cells asd marker positive
+Set the intensity threshold for deeming cells as marker (CD3) positive
 
 <img src="Images/threshold_1.png" width="600" height="300">
 
@@ -51,4 +54,19 @@ Check the accuracy of detecting CD3+ cells by overlaying the outlines of the CD3
 
 <img src="Images/overlayoutlines_cd3.png" width="600" height="300">
 
+### 8. Threshold
+Set the intensity threshold for deeming cells asd marker (FoxP3) positive
 
+<img src="Images/threshold_2.png" width="600" height="300">
+
+
+### 9. Maskobjects
+Keep the thresholded areas of the image using a mask and identify the cells present in those areas
+
+<img src="Images/maskobjects_1.png" width="600" height="300">
+
+
+### 10. OverlayOutlines
+Check the accuracy of detecting FoxP3 cells by overlaying the outlines of the CD3+ cells on the grayscale FITC image
+
+<img src="Images/overlayoutlines_cd3.png" width="600" height="300">
