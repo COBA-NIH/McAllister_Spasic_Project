@@ -103,7 +103,7 @@ Measures the correlation between CD3+ and FoxP3 intensities
 ### 15. Gray to Color
 Creates a color composite image with the three channels - DAPI, FITC, and Foxp3
 
-<img src="Images/merge.png" width="600" height="300">
+<img src="Images/merge.png" width="350" height="300">
 
 
 ### 16. Overlay Outlines
