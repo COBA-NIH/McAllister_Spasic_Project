@@ -30,6 +30,7 @@ Segment the whole cell outlines
 ### 4. IdentifyTertiaryObjects
 Segment cytoplasm (whole cells minus the nuclei)
 
+<img src="Images/idtertiary.png" width="350" height="300">
 
 
 
