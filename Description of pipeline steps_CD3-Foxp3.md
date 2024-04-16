@@ -65,7 +65,7 @@ Check the accuracy of detecting CD3+ cells by overlaying the outlines of the CD3
 ### 8. Threshold
 Set the intensity threshold for deeming cells asd marker (FoxP3) positive
 
-<img src="Images/threshold_2.png" width="600" height="300">
+<img src="Images/threshold_2.png" width="600" height="250">
 
 
 ### 9. Maskobjects
