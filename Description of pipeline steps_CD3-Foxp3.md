@@ -33,12 +33,17 @@ Segment cytoplasm (whole cells minus the nuclei)
 <img src="Images/idtertiary.png" width="350" height="300">
 
 
-
 ### 5. Threshold
+Set the intensity threshold for deeming cells asd marker positive
 
-
-
-
+<img src="Images/threshold_1.png" width="350" height="300">
 
 
 ### 6. Maskobjects
+
+
+
+
+
+
+
