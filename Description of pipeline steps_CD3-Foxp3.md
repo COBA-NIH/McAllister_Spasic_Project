@@ -24,7 +24,7 @@
 ### 1. RunStarDist
 Use the StarDist algorithm (https://github.com/stardist/stardist) to segment nuclei
 
-<img src="Images/runstardist.png" width="500" height="250">
+<img src="Images/runstardist.png" width="700" height="300">
 
 
 ### 2. OverlayOutlines
