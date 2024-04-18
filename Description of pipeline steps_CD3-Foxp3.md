@@ -63,19 +63,19 @@ Checks the accuracy of detecting CD3+ cells by overlaying the outlines of the CD
 <img src="Images/overlayoutlines_cd3.png" width="600" height="300">
 
 ### 8. Threshold
-Sets the intensity threshold for deeming cells asd marker (FoxP3) positive
+Sets the intensity threshold for deeming cells as marker (FoxP3) positive
 
 <img src="Images/threshold_2.png" width="600" height="250">
 
 
 ### 9. Maskobjects
-Keeps the thresholded areas of the image using a mask and identify the cells present in those areas
+Keeps the thresholded areas of the image using a mask and identifies the cells/nuclei present in those areas
 
 <img src="Images/maskobjects_2.png" width="600" height="300">
 
 
 ### 10. OverlayOutlines
-Checks the accuracy of detecting FoxP3 cells by overlaying the outlines of the CD3+ cells on the grayscale FITC image
+Checks the accuracy of detecting FoxP3+ cells by overlaying the outlines of the FoxP3+ cells on the grayscale Cy5 image
 
 <img src="Images/overlayoutllines_foxp3.png" width="600" height="300">
 
