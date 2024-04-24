@@ -1,7 +1,9 @@
-## Description of the purpose of each step of the image analysis pipeline along with example outputs
+## (WIP) Description of the purpose of each step of the image analysis pipeline along with example outputs
 
-- [Description of the purpose of each step of the image analysis pipeline along with example outputs](#description-of-the-purpose-of-each-step-of-the-image-analysis-pipeline-along-with-example-outputs)
-  - [1. RunStarDist](#1-runstardist)
+- [(WIP) Description of the purpose of each step of the image analysis pipeline along with example outputs](#wip-description-of-the-purpose-of-each-step-of-the-image-analysis-pipeline-along-with-example-outputs)
+  - [1. Correct Illumination Calculate and Apply](#1-correct-illumination-calculate-and-apply)
+  - [2. Correct Illumination Apply](#2-correct-illumination-apply)
+  - [3. RunStarDist](#3-runstardist)
   - [2. OverlayOutlines](#2-overlayoutlines)
   - [3. IdentifySecondaryObjects](#3-identifysecondaryobjects)
   - [4. IdentifyTertiaryObjects](#4-identifytertiaryobjects)
@@ -21,7 +23,15 @@
   - [18. Export to Spreadsheet](#18-export-to-spreadsheet)
 
 
-### 1. RunStarDist
+### 1. Correct Illumination Calculate and Apply
+Calculates and applies an illumination function to the images to correct for uneven illumination in the images of SMA-staining. The method 'Background' was selected to correct for the high background staining in some of the images of the SMA-stain (Texas Red). 
+
+
+### 2. Correct Illumination Apply
+
+
+
+### 3. RunStarDist
 Uses the StarDist algorithm (https://github.com/stardist/stardist) to segment nuclei
 
 <img src="Images/runstardist.png" width="700" height="300">
