@@ -1,6 +1,6 @@
-## (WIP) Description of the purpose of each step of the image analysis pipeline along with example outputs
+## Description of the purpose of each step of the image analysis pipeline along with example outputs
 
-- [(WIP) Description of the purpose of each step of the image analysis pipeline along with example outputs](#wip-description-of-the-purpose-of-each-step-of-the-image-analysis-pipeline-along-with-example-outputs)
+- [Description of the purpose of each step of the image analysis pipeline along with example outputs](#description-of-the-purpose-of-each-step-of-the-image-analysis-pipeline-along-with-example-outputs)
   - [1. Correct Illumination Calculate and Apply](#1-correct-illumination-calculate-and-apply)
   - [2. Correct Illumination Apply](#2-correct-illumination-apply)
   - [3. RunStarDist](#3-runstardist)

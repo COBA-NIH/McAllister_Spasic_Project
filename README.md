@@ -3,7 +3,7 @@
 # Project outline
 
 ## Dataset 1:
-The dataset comprises three channel images - DAPI (DNA), FITC (CD8+ T-cell), Texas Red (SMA+ fibroblasts). Images were received as three sets; high-contrast images, low-contrast images, and other images (composite/merged images were provided for this set).
+The dataset comprises three-channel images - DAPI (DNA), FITC (CD8+ T-cell), Texas Red (SMA+ fibroblasts). Images were received in three sets; high-contrast images, low-contrast images, and other images (composite/merged images).
 
 ### Objectives:
 1) Count the number of CD8+ cells
@@ -16,7 +16,7 @@ The dataset comprises three channel images - DAPI (DNA), FITC (CD8+ T-cell), Tex
 3) Accurate segmentation of clumped nuclei
 
 ## Dataset 2:
-This dataset comprises single-channel grayscale images - DAPI (DNA), FITC (CD3+ T-cells), Cy5 (FOXP3+ T-cells).
+This dataset comprises three-channel images - DAPI (DNA), FITC (CD3+ T-cells), Cy5 (FOXP3+ T-cells).
 
 ### Objectives:
 1) Count the number of CD3+ cells
@@ -24,3 +24,7 @@ This dataset comprises single-channel grayscale images - DAPI (DNA), FITC (CD3+ 
 
 ### Additional objectives
  - Ability to use the pipeline regardless of fluorophore for each stain
+
+## Files in this repository:
+
+1. 
