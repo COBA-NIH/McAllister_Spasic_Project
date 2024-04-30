@@ -25,7 +25,7 @@
 ### 1. Correct Illumination Calculate and Apply
 Calculates and applies an illumination function to the images to correct for uneven illumination in the images of SMA-staining. The method 'Background' was selected to correct for the high background staining in some of the images of the SMA-stain (Texas Red).
 
-<img src="Images/Illum_images.png" width="800" height="300">
+<img src="Images/Illum_images.png" width="900" height="300">
 
 
 ### 2. RunStarDist
