@@ -1,4 +1,4 @@
-### 0.0.1. This repository contains the pipelines developed for quantifying and determining spatial relationships bteween subtypes of immune cells and fibroblasts in tissues stained using multiplex immunofluorescence technology
+### This repository contains the pipelines developed for quantifying and determining spatial relationships bteween subtypes of immune cells and fibroblasts in tissues stained using multiplex immunofluorescence technology
 
 # 1. Project outline
 
