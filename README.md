@@ -30,8 +30,8 @@ This dataset comprises three-channel images - DAPI (DNA), FITC (CD3+ T-cells), C
 ## 1. Pipelines
 
 ### (i) Pipelines for Dataset 1
-A. CellProfiler pipeline without plugins: CD8-SMA-tumor_CellProfiler.cpproj; CD8-SMA-tumor_CellProfiler.cppipe
-B. CellProfiler pipeline with RunStarDist plugin: CD8-SMA-tumor_RunStarDist.cpproj; CD8-SMA-tumor_RunStarDist.cppipe
+  A. CellProfiler pipeline without plugins: CD8-SMA-tumor_CellProfiler.cpproj; CD8-SMA-tumor_CellProfiler.cppipe
+  B. CellProfiler pipeline with RunStarDist plugin: CD8-SMA-tumor_RunStarDist.cpproj; CD8-SMA-tumor_RunStarDist.cppipe
 
 ### (ii) Pipelines for Dataset 2
 A. CellProfiler pipeline without plugins: CD3-FoxP3-tumor_CellProfiler.cpproj; CD3-FoxP3-tumor_CellProfiler.cppipe
