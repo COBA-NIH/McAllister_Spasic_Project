@@ -31,7 +31,7 @@ Calculates and applies an illumination function to the images to correct for une
 ### 2. RunStarDist
 Uses the StarDist algorithm (https://github.com/stardist/stardist) to segment nuclei
 
-<img src="Images/runstardist.png" width="700" height="300">
+<img src="Images/RunStarDist_CD8_SMA.png" width="700" height="300">
 
 
 ### 2. OverlayOutlines
