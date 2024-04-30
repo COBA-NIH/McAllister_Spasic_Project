@@ -38,3 +38,5 @@ This dataset comprises three-channel images - DAPI (DNA), FITC (CD3+ T-cells), C
 2) CellProfiler pipeline with RunStarDist plugin: CD3-FoxP3-tumor_RunStarDist.cpproj; CD3-FoxP3-tumor_RunStarDist.cppipe
 
 ### 2. Description of all the steps with example images are provided for both pipelines
+
+![image](Images/Readme_image.png)
