@@ -37,7 +37,7 @@ Uses the StarDist algorithm (https://github.com/stardist/stardist) to segment nu
 ### 2. OverlayOutlines
 Checks the accuracy of the outlines of the nuclei segmented by RunStarDist
 
-<img src="Images/overlayoutlines_1.png" width="700" height="300">
+<img src="Images/Overlynucleioutlines.png" width="700" height="300">
 
 
 ### 3. IdentifySecondaryObjects
