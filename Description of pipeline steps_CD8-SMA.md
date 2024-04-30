@@ -6,6 +6,8 @@
   - [2. OverlayOutlines](#2-overlayoutlines)
   - [3. IdentifySecondaryObjects](#3-identifysecondaryobjects)
   - [4. IdentifyTertiaryObjects](#4-identifytertiaryobjects)
+  - [3. IdentifySecondaryObjects](#3-identifysecondaryobjects-1)
+  - [4. IdentifyTertiaryObjects](#4-identifytertiaryobjects-1)
   - [5. Threshold](#5-threshold)
   - [6. Maskobjects](#6-maskobjects)
   - [7. OverlayOutlines](#7-overlayoutlines)
@@ -39,6 +41,17 @@ Checks the accuracy of the outlines of the nuclei segmented by RunStarDist
 
 <img src="Images/Overlaynucleioutlines.png" width="700" height="300">
 
+
+### 3. IdentifySecondaryObjects
+Segments the whole cell outlines
+
+<img src="Images/IdSecondary_CD8_SMA.png" width="350" height="300">
+
+
+### 4. IdentifyTertiaryObjects
+Segments cytoplasm (whole cells minus the nuclei)
+
+<img src="Images/IdTertiary_CD8_SMA_1.png" width="350" height="300">
 
 ### 3. IdentifySecondaryObjects
 Segments the whole cell outlines
