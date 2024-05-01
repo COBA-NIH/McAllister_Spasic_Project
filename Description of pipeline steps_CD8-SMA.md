@@ -3,27 +3,27 @@
 - [Description of the purpose of each step of the image analysis pipeline along with example outputs](#description-of-the-purpose-of-each-step-of-the-image-analysis-pipeline-along-with-example-outputs)
   - [1. Correct Illumination Calculate and Apply](#1-correct-illumination-calculate-and-apply)
   - [2. RunStarDist](#2-runstardist)
-  - [2. OverlayOutlines](#2-overlayoutlines)
-  - [3. IdentifySecondaryObjects](#3-identifysecondaryobjects)
-  - [4. IdentifyTertiaryObjects](#4-identifytertiaryobjects)
-  - [5. IdentifySecondaryObjects](#5-identifysecondaryobjects)
-  - [6. IdentifyTertiaryObjects](#6-identifytertiaryobjects)
-  - [7. Threshold](#7-threshold)
-  - [8. Maskobjects](#8-maskobjects)
-  - [9. OverlayOutlines](#9-overlayoutlines)
-  - [10. EnhanceOrSuppressFeatures (Neurite)](#10-enhanceorsuppressfeatures-neurite)
-  - [11. Threshold](#11-threshold)
-  - [12. Maskobjects](#12-maskobjects)
-  - [13. OverlayOutlines](#13-overlayoutlines)
-  - [13. MeasureImageAreaOccupied](#13-measureimageareaoccupied)
-  - [14. MeasureObjectNeighbors](#14-measureobjectneighbors)
-  - [15. ConvertObjectstoImage](#15-convertobjectstoimage)
-  - [16. ImageMath](#16-imagemath)
-  - [17. DistanceTransform](#17-distancetransform)
-  - [18. GraytoColor](#18-graytocolor)
-  - [19. OverlayOutlines](#19-overlayoutlines)
-  - [20. Save Images](#20-save-images)
-  - [21. Export to Spreadsheet](#21-export-to-spreadsheet)
+  - [3. OverlayOutlines](#3-overlayoutlines)
+  - [4. IdentifySecondaryObjects](#4-identifysecondaryobjects)
+  - [5 IdentifyTertiaryObjects](#5-identifytertiaryobjects)
+  - [6. IdentifySecondaryObjects](#6-identifysecondaryobjects)
+  - [7. IdentifyTertiaryObjects](#7-identifytertiaryobjects)
+  - [8. Threshold](#8-threshold)
+  - [9. Maskobjects](#9-maskobjects)
+  - [10. OverlayOutlines](#10-overlayoutlines)
+  - [11. EnhanceOrSuppressFeatures (Neurite)](#11-enhanceorsuppressfeatures-neurite)
+  - [12. Threshold](#12-threshold)
+  - [13. Maskobjects](#13-maskobjects)
+  - [14. OverlayOutlines](#14-overlayoutlines)
+  - [15. MeasureImageAreaOccupied](#15-measureimageareaoccupied)
+  - [16. MeasureObjectNeighbors](#16-measureobjectneighbors)
+  - [17. ConvertObjectstoImage](#17-convertobjectstoimage)
+  - [18. ImageMath](#18-imagemath)
+  - [19. DistanceTransform](#19-distancetransform)
+  - [20. GraytoColor](#20-graytocolor)
+  - [21. OverlayOutlines](#21-overlayoutlines)
+  - [22. Save Images](#22-save-images)
+  - [23. Export to Spreadsheet](#23-export-to-spreadsheet)
 
 
 ### 1. Correct Illumination Calculate and Apply
@@ -38,112 +38,112 @@ Uses the StarDist algorithm (https://github.com/stardist/stardist) to segment nu
 <img src="Images/RunStarDist_CD8_SMA.png" width="700" height="300">
 
 
-### 2. OverlayOutlines
+### 3. OverlayOutlines
 Checks the accuracy of the outlines of the nuclei segmented by RunStarDist
 
 <img src="Images/Overlaynucleioutlines.png" width="700" height="300">
 
 
-### 3. IdentifySecondaryObjects
+### 4. IdentifySecondaryObjects
 Segments the whole cell outlines (for CD8)
 
 <img src="Images/IdSecondary_CD8_SMA.png" width="350" height="300">
 
 
-### 4. IdentifyTertiaryObjects
+### 5 IdentifyTertiaryObjects
 Segments cytoplasm (whole cells minus the nuclei) (for CD8)
 
 <img src="Images/IdTertiary_CD8_SMA_1.png" width="350" height="300">
 
-### 5. IdentifySecondaryObjects
+### 6. IdentifySecondaryObjects
 Segments the whole cell outlines (for SMA)
 
 <img src="Images/IdSecondary_CD8_SMA_2.png" width="350" height="300">
 
 
-### 6. IdentifyTertiaryObjects
+### 7. IdentifyTertiaryObjects
 Segments cytoplasm (whole cells minus the nuclei) (for SMA)
 
 <img src="Images/IdTertiary_CD8_SMA_2.png" width="350" height="300">
 
 
-### 7. Threshold
+### 8. Threshold
 Sets the intensity threshold for deeming cells as marker (CD8) positive
 
 <img src="Images/Threshold_CD8.png" width="600" height="300">
 
 
-### 8. Maskobjects
+### 9. Maskobjects
 Keeps the thresholded areas of the image using a mask and identify the cells present in those areas
 
 <img src="Images/MaskObjects_CD8.png" width="600" height="300">
 
 
-### 9. OverlayOutlines
+### 10. OverlayOutlines
 Checks the accuracy of detecting CD8+ cells by overlaying the outlines of the CD8+ cells on the grayscale FITC image
 
 <img src="Images/OverlayOutlines_CD8.png" width="600" height="300">
 
 
-### 10. EnhanceOrSuppressFeatures (Neurite)
+### 11. EnhanceOrSuppressFeatures (Neurite)
 Enhances thin, elongated areas of the image - this was performed to enable detection of the SMA+ fibroblasts
 
 <img src="Images/EnahanceOrSuppressFeatures.png" width="600" height="300">
 
 
-### 11. Threshold
+### 12. Threshold
 Sets the intensity threshold for deeming cells as marker (SMA) positive
 
 <img src="Images/Threshold_SMA.png" width="600" height="300">
 
 
-### 12. Maskobjects
+### 13. Maskobjects
 Keeps the thresholded areas of the image using a mask and identifies the cells/nuclei present in those areas
 
-<img src="Images/maskobjects_2.png" width="600" height="300">
+<img src="Images/MaskObjects_SMA.png" width="600" height="300">
 
 
-### 13. OverlayOutlines
+### 14. OverlayOutlines
 Checks the accuracy of detecting FoxP3+ cells by overlaying the outlines of the FoxP3+ cells on the grayscale Cy5 image
 
 <img src="Images/overlayoutllines_foxp3.png" width="600" height="300">
 
 
-### 13. MeasureImageAreaOccupied
+### 15. MeasureImageAreaOccupied
 
 
-### 14. MeasureObjectNeighbors
+### 16. MeasureObjectNeighbors
 
 
 
-### 15. ConvertObjectstoImage
+### 17. ConvertObjectstoImage
 Associates the CD3+ cells (parent objects) to the FoxP3+ cells (child objcets)
 
 <img src="Images/doublepositivecells.png" width="1200" height="300">
 
 
-### 16. ImageMath
+### 18. ImageMath
 Checks the accuracy of detecting double positive cells by overlaying the outlines of the CD3+FoxP3+ cells on the grayscale FITC image
 
 <img src="Images/overlayoutlines_2.png" width="600" height="300">
 
 
-### 17. DistanceTransform
+### 19. DistanceTransform
 
 
 
-### 18. GraytoColor
+### 20. GraytoColor
 Measures the correlation between CD3+ and FoxP3 intensities
 
 
-### 19. OverlayOutlines
+### 21. OverlayOutlines
 Creates a color composite image with the three channels - DAPI, FITC, and Foxp3
 
 <img src="Images/merge.png" width="350" height="300">
 
 
-### 20. Save Images
+### 22. Save Images
 Saves all the overlays to designated folders
 
-### 21. Export to Spreadsheet
+### 23. Export to Spreadsheet
 Exports all measurements to a spreadsheet for downstream analysis
