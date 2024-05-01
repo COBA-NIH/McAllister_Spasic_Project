@@ -11,6 +11,7 @@
   - [7. Threshold](#7-threshold)
   - [8. Maskobjects](#8-maskobjects)
   - [9. OverlayOutlines](#9-overlayoutlines)
+  - [10. EnhanceOrSuppressFeatures (Neurite)](#10-enhanceorsuppressfeatures-neurite)
   - [10. Threshold](#10-threshold)
   - [11. Maskobjects](#11-maskobjects)
   - [12. OverlayOutlines](#12-overlayoutlines)
@@ -83,8 +84,15 @@ Checks the accuracy of detecting CD8+ cells by overlaying the outlines of the CD
 
 <img src="Images/OverlayOutlines_CD8.png" width="600" height="300">
 
+
+### 10. EnhanceOrSuppressFeatures (Neurite)
+Enhances thin, elongated areas of the image - this was performed to enable detection of the SMA+ fibroblasts
+
+<img src="Images/EnahanceOrSuppressFeatures.png" width="600" height="300">
+
+
 ### 10. Threshold
-Sets the intensity threshold for deeming cells as marker (FoxP3) positive
+Sets the intensity threshold for deeming cells as marker (SMA) positive
 
 <img src="Images/threshold_2.png" width="600" height="250">
 
