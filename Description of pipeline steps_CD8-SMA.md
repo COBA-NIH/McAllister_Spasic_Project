@@ -94,7 +94,7 @@ Enhances thin, elongated areas of the image - this was performed to enable detec
 ### 11. Threshold
 Sets the intensity threshold for deeming cells as marker (SMA) positive
 
-<img src="Images/threshold_2.png" width="600" height="250">
+<img src="Threshold_SMA.png" width="600" height="300">
 
 
 ### 12. Maskobjects
