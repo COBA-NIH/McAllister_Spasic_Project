@@ -69,7 +69,7 @@ Segments cytoplasm (whole cells minus the nuclei) (for SMA)
 ### 7. Threshold
 Sets the intensity threshold for deeming cells as marker (CD8) positive
 
-<img src="Images/threshold_1.png" width="600" height="300">
+<img src="Images/Threshold_CD8.png" width="600" height="300">
 
 
 ### 8. Maskobjects
