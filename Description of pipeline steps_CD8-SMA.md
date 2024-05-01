@@ -12,9 +12,9 @@
   - [8. Maskobjects](#8-maskobjects)
   - [9. OverlayOutlines](#9-overlayoutlines)
   - [10. EnhanceOrSuppressFeatures (Neurite)](#10-enhanceorsuppressfeatures-neurite)
-  - [10. Threshold](#10-threshold)
-  - [11. Maskobjects](#11-maskobjects)
-  - [12. OverlayOutlines](#12-overlayoutlines)
+  - [11. Threshold](#11-threshold)
+  - [12. Maskobjects](#12-maskobjects)
+  - [13. OverlayOutlines](#13-overlayoutlines)
   - [13. MeasureImageAreaOccupied](#13-measureimageareaoccupied)
   - [14. MeasureObjectNeighbors](#14-measureobjectneighbors)
   - [15. ConvertObjectstoImage](#15-convertobjectstoimage)
@@ -91,19 +91,19 @@ Enhances thin, elongated areas of the image - this was performed to enable detec
 <img src="Images/EnahanceOrSuppressFeatures.png" width="600" height="300">
 
 
-### 10. Threshold
+### 11. Threshold
 Sets the intensity threshold for deeming cells as marker (SMA) positive
 
 <img src="Images/threshold_2.png" width="600" height="250">
 
 
-### 11. Maskobjects
+### 12. Maskobjects
 Keeps the thresholded areas of the image using a mask and identifies the cells/nuclei present in those areas
 
 <img src="Images/maskobjects_2.png" width="600" height="300">
 
 
-### 12. OverlayOutlines
+### 13. OverlayOutlines
 Checks the accuracy of detecting FoxP3+ cells by overlaying the outlines of the FoxP3+ cells on the grayscale Cy5 image
 
 <img src="Images/overlayoutllines_foxp3.png" width="600" height="300">
