@@ -81,7 +81,7 @@ Keeps the thresholded areas of the image using a mask and identify the cells pre
 ### 9. OverlayOutlines
 Checks the accuracy of detecting CD8+ cells by overlaying the outlines of the CD8+ cells on the grayscale FITC image
 
-<img src="Images/OverlayOutlines_CD8.png" width="600" height="300">
+<img src="Images/OverlayOutlines_CD8.png" width="600" height="250">
 
 ### 10. Threshold
 Sets the intensity threshold for deeming cells as marker (FoxP3) positive
