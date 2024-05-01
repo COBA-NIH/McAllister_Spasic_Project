@@ -1,6 +1,6 @@
-## (WIP) Description of the purpose of each step of the image analysis pipeline along with example outputs
+## Description of the purpose of each step of the image analysis pipeline along with example outputs
 
-- [(WIP) Description of the purpose of each step of the image analysis pipeline along with example outputs](#wip-description-of-the-purpose-of-each-step-of-the-image-analysis-pipeline-along-with-example-outputs)
+- [Description of the purpose of each step of the image analysis pipeline along with example outputs](#description-of-the-purpose-of-each-step-of-the-image-analysis-pipeline-along-with-example-outputs)
   - [1. Correct Illumination Calculate and Apply](#1-correct-illumination-calculate-and-apply)
   - [2. RunStarDist](#2-runstardist)
   - [2. OverlayOutlines](#2-overlayoutlines)
@@ -79,7 +79,7 @@ Keeps the thresholded areas of the image using a mask and identify the cells pre
 
 
 ### 9. OverlayOutlines
-Checks the accuracy of detecting CD8+ cells by overlaying the outlines of the CD3+ cells on the grayscale FITC image
+Checks the accuracy of detecting CD8+ cells by overlaying the outlines of the CD8+ cells on the grayscale FITC image
 
 <img src="Images/OverlayOutlines_CD8.png" width="600" height="300">
 
