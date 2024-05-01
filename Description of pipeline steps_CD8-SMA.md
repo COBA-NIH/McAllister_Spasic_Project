@@ -18,7 +18,7 @@
   - [15. MeasureImageAreaOccupied](#15-measureimageareaoccupied)
   - [16. MeasureObjectNeighbors](#16-measureobjectneighbors)
   - [17. ConvertObjectstoImage](#17-convertobjectstoimage)
-  - [18. ImageMath (Invert)](#18-imagemath-invert)
+  - [18. ImageMath (Invert),,](#18-imagemath-invert)
   - [19. DistanceTransform](#19-distancetransform)
   - [20. GraytoColor](#20-graytocolor)
   - [21. OverlayOutlines](#21-overlayoutlines)
@@ -123,7 +123,7 @@ Coverts the identified CD8+ cells to a binary image for performing further downs
 <img src="Images/ObjecttoImage_CD8.png" width="600" height="300">
 
 
-### 18. ImageMath (Invert)
+### 18. ImageMath (Invert),,
 Inverts the image such that the darkest pixels become the brightest pixels
 
 <img src="Images/overlayoutlines_2.png" width="600" height="300">
@@ -152,3 +152,4 @@ Saves all the overlays to designated folders
 
 ### 23. Export to Spreadsheet
 Exports all measurements to a spreadsheet for downstream analysis
+
