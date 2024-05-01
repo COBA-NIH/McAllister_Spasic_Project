@@ -63,7 +63,7 @@ Segments the whole cell outlines (for SMA)
 ### 6. IdentifyTertiaryObjects
 Segments cytoplasm (whole cells minus the nuclei) (for SMA)
 
-<img src="Images/idtertiary.png" width="350" height="300">
+<img src="Images/IdTertiary_CD8_SMA_2.png" width="350" height="300">
 
 
 ### 7. Threshold
