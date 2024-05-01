@@ -18,7 +18,7 @@
   - [15. MeasureImageAreaOccupied](#15-measureimageareaoccupied)
   - [16. MeasureObjectNeighbors](#16-measureobjectneighbors)
   - [17. ConvertObjectstoImage](#17-convertobjectstoimage)
-  - [18. ImageMath](#18-imagemath)
+  - [18. ImageMath (Invert)](#18-imagemath-invert)
   - [19. DistanceTransform](#19-distancetransform)
   - [20. GraytoColor](#20-graytocolor)
   - [21. OverlayOutlines](#21-overlayoutlines)
@@ -123,22 +123,26 @@ Coverts the identified CD8+ cells to a binary image for performing further downs
 <img src="Images/ObjecttoImage_CD8.png" width="600" height="300">
 
 
-### 18. ImageMath
-Checks the accuracy of detecting double positive cells by overlaying the outlines of the CD3+FoxP3+ cells on the grayscale FITC image
+### 18. ImageMath (Invert)
+Inverts the image such that the darkest pixels become the brightest pixels
 
 <img src="Images/overlayoutlines_2.png" width="600" height="300">
 
 
 ### 19. DistanceTransform
+description
 
+<img src="Images/overlayoutlines_2.png" width="600" height="300">
 
 
 ### 20. GraytoColor
-Measures the correlation between CD3+ and FoxP3 intensities
+Creates a composite color image merging the DAPI (DNA), FITC (CD8), and Texas Red (SMA) channels
+
+<img src="Images/overlayoutlines_2.png" width="600" height="300">
 
 
 ### 21. OverlayOutlines
-Creates a color composite image with the three channels - DAPI, FITC, and Foxp3
+Overlays the outlines of the CD8+ and SMA+ cells on the composite color image
 
 <img src="Images/merge.png" width="350" height="300">
 
