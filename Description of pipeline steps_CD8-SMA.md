@@ -75,13 +75,13 @@ Sets the intensity threshold for deeming cells as marker (CD8) positive
 ### 8. Maskobjects
 Keeps the thresholded areas of the image using a mask and identify the cells present in those areas
 
-<img src="Images/MaskObjects_CD8.png" width="600" height="250">
+<img src="Images/MaskObjects_CD8.png" width="600" height="300">
 
 
 ### 9. OverlayOutlines
 Checks the accuracy of detecting CD8+ cells by overlaying the outlines of the CD8+ cells on the grayscale FITC image
 
-<img src="Images/OverlayOutlines_CD8.png" width="600" height="250">
+<img src="Images/OverlayOutlines_CD8.png" width="600" height="300">
 
 ### 10. Threshold
 Sets the intensity threshold for deeming cells as marker (FoxP3) positive
