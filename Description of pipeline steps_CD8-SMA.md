@@ -118,9 +118,9 @@ Measures the number of CD8+ cells that lie within a radius of 20u, 50u, 100u, an
 
 
 ### 17. ConvertObjectstoImage
-Coverts the identified CD8+ cells to an image for performing further downstream measurements
+Coverts the identified CD8+ cells to a binary image for performing further downstream measurements
 
-<img src="Images/doublepositivecells.png" width="1200" height="300">
+<img src="Images/ObjecttoImage_CD8.png" width="1200" height="300">
 
 
 ### 18. ImageMath
