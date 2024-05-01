@@ -130,9 +130,9 @@ Inverts the image such that the darkest pixels become the brightest pixels
 
 
 ### 19. DistanceTransform
-description
+Computes the distance of a foreground pixel to the nearest background pixel and rescales the resultant image in a way that the largest distance is 1. This step is performed to obtain more nuanced measurements of the distances of CD8+ cells to SMA+ areas. 
 
-<img src="Images/overlayoutlines_2.png" width="600" height="300">
+<img src="Images/DistanceTransform.png" width="600" height="300">
 
 
 ### 20. GraytoColor
