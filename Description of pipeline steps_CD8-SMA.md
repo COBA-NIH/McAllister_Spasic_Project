@@ -118,7 +118,7 @@ Measures the number of CD8+ cells that lie within a radius of 20u, 50u, 100u, an
 
 
 ### 17. ConvertObjectstoImage
-Associates the CD3+ cells (parent objects) to the FoxP3+ cells (child objcets)
+Coverts the identified CD8+ cells to an image for performing further downstream measurements
 
 <img src="Images/doublepositivecells.png" width="1200" height="300">
 
