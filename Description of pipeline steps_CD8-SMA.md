@@ -144,7 +144,7 @@ Creates a composite color image merging the DAPI (DNA), FITC (CD8), and Texas Re
 ### 21. OverlayOutlines
 Overlays the outlines of the CD8+ and SMA+ cells on the composite color image
 
-<img src="Images/merge.png" width="350" height="300">
+<img src="Images/Merge_CD8-SMA.png" width="350" height="300">
 
 
 ### 22. Save Images
