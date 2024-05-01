@@ -79,7 +79,7 @@ Keeps the thresholded areas of the image using a mask and identify the cells pre
 
 
 ### 9. OverlayOutlines
-Checks the accuracy of detecting CD3+ cells by overlaying the outlines of the CD3+ cells on the grayscale FITC image
+Checks the accuracy of detecting CD8+ cells by overlaying the outlines of the CD3+ cells on the grayscale FITC image
 
 <img src="Images/overlayoutlines_cd3.png" width="600" height="300">
 
