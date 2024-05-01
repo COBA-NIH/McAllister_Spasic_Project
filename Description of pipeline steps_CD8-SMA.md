@@ -104,16 +104,17 @@ Keeps the thresholded areas of the image using a mask and identifies the cells/n
 
 
 ### 14. OverlayOutlines
-Checks the accuracy of detecting FoxP3+ cells by overlaying the outlines of the FoxP3+ cells on the grayscale Cy5 image
+Checks the accuracy of detecting FoxP3+ cells by overlaying the outlines of the SMA+ cells on the grayscale TexasRed image
 
-<img src="Images/overlayoutllines_foxp3.png" width="600" height="300">
+<img src="Images/OverlayOutlines_SMA.png" width="600" height="300">
 
 
 ### 15. MeasureImageAreaOccupied
+Measures the area of image occupied by SMA+ cells
 
 
 ### 16. MeasureObjectNeighbors
-
+Measures the number of CD8+ cells that lie within a radius of 20u, 50u, 100u, and 200u from the SMA+ areas
 
 
 ### 17. ConvertObjectstoImage
