@@ -138,7 +138,7 @@ Computes the distance of a foreground pixel to the nearest background pixel and 
 ### 20. GraytoColor
 Creates a composite color image merging the DAPI (DNA), FITC (CD8), and Texas Red (SMA) channels
 
-<img src="Images/Merge_CD8-SMA.png" width="600" height="300">
+<img src="Images/Merge_CD8-SMA.png" width="350" height="300">
 
 
 ### 21. OverlayOutlines
